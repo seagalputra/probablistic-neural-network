@@ -60,14 +60,16 @@ for i = 1:size(valid)
     f(i,4) = valid(i,4);
     
     % Mencari nilai maksimum pada setiap baris matrix f(x)
-%     for k = 1:size(f)
-%         max_f(k,1) = max(f(k,1:3));
-%         if (find(max_f(k,1) == f(k,1:3)) == f(k,1))
-%             klasifikasi(k,1) = 0;
-%         elseif(find(max_f(k,1) == f(k,1:3)) == f(k,2))
-%             klasifikasi(k,1) = 1;
-%         elseif(find(max_f(k,1) == f(k,1:3)) == f(k,3))
-%             klasifikasi(k,1) = 2;
-%         end
-%     end
+    for k = 1:size(f)
+        max_f(k,1) = max(f(k,1:3));
+        if (find(max_f(k,1) == f(k,1:3)) == 1)
+            klasifikasi(k,1) = 0;
+        elseif (find(max_f(k,1) == f(k,1:3)) == 2)
+            klasifikasi(k,1) = 1;
+        elseif (find(max_f(k,1) == f(k,1:3)) == 3)
+            klasifikasi(k,1) = 2;
+        end
+    end
+    
+    % Menghitung akurasi pada model yang dibuat
 end
