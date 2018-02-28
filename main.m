@@ -72,4 +72,12 @@ for i = 1:size(valid)
     end
     
     % Menghitung akurasi pada model yang dibuat
+    jumlahBenar = 0;
+    for m = 1:size(klasifikasi)
+        if (klasifikasi(m,1) == f(m,4))
+            jumlahBenar = jumlahBenar + 1;
+        end
+    end
+    akurasi = (jumlahBenar/50)*100;
+    disp(akurasi);
 end
