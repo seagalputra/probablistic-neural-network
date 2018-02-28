@@ -36,7 +36,7 @@ data_train2 = data_train(find(data_kelas==2),:);
 % Smoothing parameter
 s = 1;
 
-% hitung g(x)
+% hitung g(x) dengan memisahkan setiap data train per kelasnya
 for i = 1:size(valid)
     % Perhitungan f(x) pada kelas 0
     for j = 1:size(data_train0)
@@ -79,5 +79,4 @@ for i = 1:size(valid)
         end
     end
     akurasi = (jumlahBenar/50)*100;
-    disp(akurasi);
 end
