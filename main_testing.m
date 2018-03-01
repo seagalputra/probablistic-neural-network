@@ -41,10 +41,7 @@ for i = 1:size(valid)
         kelas2(i,1) = exp(-(((valid(i,1)-data_train2(n,1))^2 + (valid(i,2)-data_train2(n,2))^2 + (valid(i,3)-data_train2(n,3))^2) / 2*s^2));
         f(i,3) = sum(kelas2(i,1))/size(data_train2,1);
     end
-    
-    % Memindahkan kelas pada data validasi ke matrix f(x)
-    % f(i,4) = valid(i,4);
-    
+
     % Mencari nilai maksimum pada setiap baris matrix f(x)
     for k = 1:size(f)
         max_f(k,1) = max(f(k,1:3));
@@ -79,13 +76,3 @@ plot3(class1_test(:,1),class1_test(:,2),class1_test(:,3),'bo');
 hold on;
 plot3(class2_test(:,1),class2_test(:,2),class2_test(:,3),'go');
 hold on;
-
-% Menghitung akurasi pada model yang dibuat
-% jumlahBenar = 0;
-% for m = 1:size(klasifikasi)
-%     if (klasifikasi(m,1) == f(m,4))
-%         jumlahBenar = jumlahBenar + 1;
-%     end
-% end
-% akurasi = (jumlahBenar/50)*100;
-% disp(akurasi);
