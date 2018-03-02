@@ -60,16 +60,15 @@ valid(:,4) = klasifikasi(:,1);
 
 % Menulis data pada text file
 fileID = fopen('hasil_testing.txt','w');
-fprintf(fileID, '%6s %12s\r\n','x1','x2','x3','y');
-fprintf(fileID, '%6.2f %12.8f\r\n',valid);
+fprintf(fileID, '%6s %6s %6s %1s\r\n','atr1','atr2','atr3','y');
+fprintf(fileID, '%6.9f %6.9f %6.9f %1i\r\n',valid);
 
-% Menampilkan data train ke grafik
+% Menampilkan data test ke grafik
 dataTest_sort = sortrows(valid,4);
 class0_test = dataTest_sort(1:16,1:3);
 class1_test = dataTest_sort(17:23,1:3);
 class2_test = dataTest_sort(24:30,1:3);
 
-figure(2);
 plot3(class0_test(:,1),class0_test(:,2),class0_test(:,3),'ro');
 hold on;
 plot3(class1_test(:,1),class1_test(:,2),class1_test(:,3),'bo');
