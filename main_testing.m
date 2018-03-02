@@ -59,9 +59,10 @@ end
 valid(:,4) = klasifikasi(:,1);
 
 % Menulis data pada text file
-fileID = fopen('hasil_testing.txt','w');
-fprintf(fileID, '%6s %6s %6s %1s\r\n','atr1','atr2','atr3','y');
-fprintf(fileID, '%6.9f %6.9f %6.9f %1i\r\n',valid);
+valid_transpose = valid.';
+fileID = fopen('prediksi.txt','w');
+fprintf(fileID, '%6s %6s %6s %6s\r\n','atr1','atr2','atr3','y');
+fprintf(fileID, '%3.9f %3.9f %3.9f %1i\r\n',valid_transpose);
 
 % Menampilkan data test ke grafik
 dataTest_sort = sortrows(valid,4);
